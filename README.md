@@ -225,6 +225,3 @@ By linking **analysis → references → real source**, this app simplifies unde
 ---
 
 **Built for interactive learning, research, and document exploration.**
-
-```
-
