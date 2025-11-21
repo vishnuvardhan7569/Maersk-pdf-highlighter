@@ -1,4 +1,3 @@
-````markdown
 # 📄 Maersk  – Interactive PDF Highlighter
 
 An interactive web application that connects **analysis text** with **exact source lines inside a PDF report** using clickable references and dynamic highlighting.
@@ -229,6 +228,3 @@ By linking **analysis → references → real source**, this app simplifies unde
 
 ```
 
-
-Just tell me where you want to host it 🚀
-```
