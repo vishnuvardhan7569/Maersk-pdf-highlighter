@@ -1,0 +1,402 @@
+/* src/styles/layout.css */
+
+:root {
+  --border-subtle: #e5e7eb;
+  --bg-card: #ffffff;
+  --bg-muted: #f3f4f6;
+  --bg-strong: #0f172a;
+  --text-primary: #0f172a;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.app-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 12px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+      120deg,
+      rgba(59, 130, 246, 0.05),
+      rgba(147, 197, 253, 0.1)
+    ),
+    #0b1120;
+  color: #e5e7eb;
+  box-shadow: var(--shadow-soft);
+}
+
+.app-header-left {
+  max-width: 70%;
+}
+
+.app-title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.app-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.app-header-right {
+  display: flex;
+  gap: 8px;
+}
+
+.app-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.app-pill-secondary {
+  background: rgba(37, 99, 235, 0.18);
+  border-color: rgba(191, 219, 254, 0.6);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  min-height: 0;
+}
+
+.app-pane {
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.app-pane-left {
+  flex: 3;
+  min-width: 0;
+}
+
+.app-pane-right {
+  flex: 2;
+  min-width: 0;
+  background: linear-gradient(145deg, #f9fafb, #eff6ff);
+}
+
+/* Analysis panel */
+
+.analysis-container {
+  height: 100%;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: auto;
+}
+
+.analysis-card {
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 14px 16px;
+  border: 1px solid rgba(209, 213, 219, 0.7);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+}
+
+.analysis-card--secondary {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.analysis-title {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.analysis-subtitle {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.analysis-tagline {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.analysis-body p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #111827;
+}
+
+.analysis-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Reference buttons */
+
+.analysis-ref-btn {
+  border: none;
+  background: none;
+  font-size: 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.analysis-ref-btn:hover {
+  background: rgba(37, 99, 235, 0.06);
+  color: #2563eb;
+  transform: translateY(-0.5px);
+}
+
+.analysis-ref-btn--active {
+  background: rgba(37, 99, 235, 0.13);
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* Reference list */
+
+.analysis-ref-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.analysis-ref-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(209, 213, 219, 0.8);
+}
+
+.analysis-ref-item:last-child {
+  border-bottom: none;
+}
+
+.analysis-ref-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.analysis-ref-page {
+  font-size: 11px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.analysis-ref-phrase {
+  font-size: 11px;
+  color: #4b5563;
+  font-style: italic;
+}
+
+.analysis-help {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   RESPONSIVE LAYOUT
+   =======================*/
+
+/* Medium screens (tablets / small laptops) */
+@media (max-width: 1024px) {
+  .app-root {
+    padding: 10px;
+  }
+
+  .app-header {
+    padding: 10px 12px;
+  }
+
+  .app-title {
+    font-size: 18px;
+  }
+
+  .app-subtitle {
+    font-size: 12px;
+  }
+
+  .app-main {
+    gap: 10px;
+  }
+
+  .app-pane-left {
+    flex: 3;
+  }
+
+  .app-pane-right {
+    flex: 2;
+  }
+}
+
+/* Small screens (phones, narrow tablets) */
+@media (max-width: 768px) {
+  /* Allow the whole page to scroll vertically */
+  .app-root {
+    padding: 8px;
+    height: auto;        /* instead of 100vh */
+    min-height: 100vh;   /* still fill at least one screen */
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .app-header-left {
+    max-width: 100%;
+  }
+
+  .app-header-right {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  /* Stack PDF and Analysis vertically */
+  .app-main {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Each pane keeps its own inner scroll (PDF / analysis),
+     but the page itself can also scroll */
+  .app-pane-left,
+  .app-pane-right {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+    height: 60vh;        /* each pane has a "window" height */
+    max-height: 60vh;
+    overflow: hidden;    /* inner content (pdf-scroll-wrapper / analysis-container) will scroll */
+  }
+
+  .analysis-container {
+    padding: 12px 12px;
+  }
+
+  .analysis-card {
+    padding: 12px 12px;
+  }
+}
+
+
+/* Header row in analysis/reference cards */
+.analysis-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* Small edit button */
+.analysis-edit-btn {
+  border: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  cursor: pointer;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+  font-weight: 500;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.analysis-edit-btn:hover {
+  background: rgba(37, 99, 235, 0.18);
+  transform: translateY(-0.5px);
+}
+
+/* Textareas for analysis editing */
+.analysis-edit-textarea {
+  width: 100%;
+  min-height: 60px;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* Inputs for reference editing */
+.analysis-ref-input {
+  font-size: 11px;
+  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  padding: 2px 6px;
+  box-sizing: border-box;
+}
+
+.analysis-ref-input--page {
+  width: 60px;
+  margin-left: 4px;
+}
+
+.analysis-ref-input--phrase {
+  margin-top: 2px;
+  width: 100%;
+}
+
+
+
+/* Extra small screens (very small phones) */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 16px;
+  }
+
+  .app-subtitle {
+    font-size: 11px;
+  }
+
+  .app-header {
+    padding: 8px 10px;
+  }
+
+  .app-pill {
+    font-size: 10px;
+    padding: 4px 7px;
+  }
+
+  .analysis-body p {
+    font-size: 12px;
+  }
+
+  .analysis-ref-phrase {
+    font-size: 10px;
+  }
+}
